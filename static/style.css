@@ -1,0 +1,164 @@
+body {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo {
+    margin-top: 3%;
+    font-size: 100px;
+}
+
+#inputDiv {
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    background-color: rgb(71, 71, 71);
+    border: 1px solid rgb(71, 71, 71);
+    width: 200px;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    transform: scale(1.5);
+}
+
+input:focus{
+    outline: none;
+    background-color: rgb(85, 85, 85);
+}
+
+#suggestions {
+    background-color: rgb(17, 17, 17);
+    position: absolute;
+    z-index: 1;
+    font-size: 30px;
+    width: 331px;
+    top: 74px;
+    left: -55px;
+}
+
+.suggestion, .notFound {
+    padding: 10px;
+    margin: 0;
+}
+
+.notFound {
+    font-size: 20px;
+    text-align: center;
+}
+
+.suggestion:hover, .chosen {
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+#tableDiv {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+}
+
+table {
+    user-select: none;
+    font-size: 30px;
+    border-spacing: 5px;
+    table-layout: fixed;
+    width: 60%;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+thead {
+    font-size: 25px;
+}
+
+td, th {
+    width: 200px;
+    height: 100px;
+    overflow-wrap: break-word;
+}
+
+td {
+    padding: 10px;
+}
+
+.name {
+    background-color: rgb(56, 56, 56);
+}
+
+.correct {
+    background-color: rgb(28, 117, 28);
+}
+
+.wrong {
+    background-color: rgb(209, 55, 55);
+}
+
+.close {
+    background-color: rgb(187, 187, 65);
+}
+
+
+/* Animation for logo when the rapper is guessed */
+@keyframes correctGuess {
+    0% {
+        color: white;
+        transform: scale(1);
+    }
+    25% {
+        color: red;
+    }
+    50% {
+        color: rgb(12, 45, 190);
+        transform: scale(2);
+    }
+    75% {
+        color: greenyellow;
+    }
+    85% {
+        color: orange;
+    }
+    100% {
+        color: white;
+        transform: scale(1);
+    }
+}
+
+.animate-correctGuess {
+    animation: correctGuess 2s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Animation for logo when the raper is not guessed */
+@keyframes wrongGuess {
+    0% {
+        color: white;
+        margin-left: none;
+    }
+    25% {
+        color: rgb(209, 55, 55);
+        margin-left: 60px;
+    }
+    75% {
+        color: rgb(209, 55, 55);
+        margin-left: -60px;
+    }
+    100% {
+        color: white;
+        margin-left: none;
+    }
+}
+.animate-wrongGuess {
+    animation: wrongGuess 0.5s ease-in-out;
+    animation-iteration-count: 1;
+}
