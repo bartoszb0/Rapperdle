@@ -143,7 +143,7 @@ function guess(rapper) {
         triggerAnimation(logo, "correctGuess");
         input.style.visibility = 'hidden';
     } else {
-        //triggerAnimation(logo, "wrongGuess");
+        triggerAnimation(logo, "wrongGuess");
         alreadyChosen.push(rapper);
     }
 }
