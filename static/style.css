@@ -35,6 +35,10 @@ input:focus{
     background-color: rgb(85, 85, 85);
 }
 
+input:disabled {
+    background-color: rgb(44, 44, 44);
+}
+
 #suggestions {
     background-color: rgb(17, 17, 17);
     position: absolute;
@@ -181,13 +185,10 @@ td {
 /* Hide input */
 @keyframes hideInput {
     0% {
-        visibility: hidden;
         user-select: none;
         opacity: 1;
     }
     100% {
-        visibility: hidden;
-        user-select: none;
         opacity: 0;
     }
 }
@@ -196,4 +197,53 @@ td {
     animation: hideInput 0.5s ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+/* Modal for win */
+@keyframes showModal {
+    0% {
+        background-color: rgb(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+}
+
+
+.modalDiv {
+    animation: showModal 1s ease-in-out;
+    animation-iteration-count: 1;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.okButton {
+    width: 100px;
+    height: 50px;
+    font-family: 'Cal Sans', sans-serif;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(119, 119, 119);
+    color: white;
+}
+
+.okButton:hover {
+    background-color: rgb(139, 139, 139);
+    cursor: pointer;
 }

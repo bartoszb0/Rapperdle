@@ -66,15 +66,22 @@ document.addEventListener('click', hideSuggestions);
 // --- Keyboard UX improvements ---
 
 // When user presses enter choose the first rapper that is being shown
-function chooseFirstRapper(e) {
+input.addEventListener('keyup', (e) => {
     if (e.key === "Enter") {
-        if (document.querySelectorAll('.suggestion')[0]) {
-            guess(document.querySelectorAll('.suggestion')[0].value)
+        if (document.querySelector('.suggestion')) {
+            guess(document.querySelector('.suggestion').value);
         }
     }
-}
+})
 
-input.addEventListener('keyup', chooseFirstRapper);
+// Highlight first rapper
+input.addEventListener('keydown', (e) => {
+    if (e.key === "Enter") {
+        if (document.querySelector('.suggestion')) {
+            document.querySelector('.suggestion').classList.add('chosen');
+        }
+    }
+})
 
 
 // Check if guessed rapper is the todays choice
@@ -141,6 +148,7 @@ async function guess(rapper) {
     if (rapper === todaysRapper) {
         triggerAnimation(logo, "correctGuess");
         input.classList.add('animate-hideInput');
+        winnerModal();
     } else {
         //triggerAnimation(logo, "wrongGuess");
         alreadyChosen.push(rapper);
@@ -165,4 +173,40 @@ function triggerAnimation(element, animationName) {
     element.addEventListener('animationend', () => {
         element.classList.remove(`animate-${animationName}`);
     })
+}
+
+
+function winnerModal() {
+    const modalDiv = document.createElement('div');
+    document.body.appendChild(modalDiv);
+    modalDiv.classList.add('modalDiv')
+
+    const modal = document.createElement('div');
+    modalDiv.appendChild(modal);
+    modal.classList.add('modal');
+    modal.textContent = `It's ${todaysRapper.name}!`;
+
+    const attemptCount = document.createElement('p');
+    attemptCount.textContent = howManyAttempts(alreadyChosen.length + 1);
+    attemptCount.style.fontSize = '30px';
+    modal.appendChild(attemptCount);
+
+    const okButton = document.createElement('button');
+    modal.appendChild(okButton);
+    okButton.textContent = 'close';
+    okButton.classList.add('okButton')
+
+    okButton.addEventListener('click', () => {
+        modalDiv.remove();
+        modal.remove();
+        okButton.remove();
+    })
+}
+
+function howManyAttempts(count) {
+    if (count > 1) {
+        return `It took you ${count} attempts`;
+    } else if (count === 1) {
+        return 'First try!';
+    }
 }
