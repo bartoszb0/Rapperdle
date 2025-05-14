@@ -1,7 +1,8 @@
 import Rappers from './rappers.js';
 
 // Pick random rapper
-const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
+//const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
+const todaysRapper = Rappers[21]
 console.log(todaysRapper)
 console.log(todaysRapper.genre)
 

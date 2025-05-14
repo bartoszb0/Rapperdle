@@ -19,7 +19,7 @@ const Rappers = [
     {
         name: 'Travis Scott',
         age: calculateAge(1991, 4, 30),
-        genre: ['Trap'],
+        genre: 'Trap',
         from: 'Houston, Texas',
         monthly: '60M+',
         debut: '2013',
