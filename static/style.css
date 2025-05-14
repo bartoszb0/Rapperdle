@@ -73,9 +73,8 @@ table {
     font-size: 30px;
     border-spacing: 5px;
     table-layout: fixed;
-    width: 60%;
+    width: 85vw;
     text-align: center;
-    overflow-wrap: break-word;
 }
 
 thead {
@@ -83,7 +82,6 @@ thead {
 }
 
 td, th {
-    width: 200px;
     height: 100px;
     overflow-wrap: break-word;
 }
@@ -108,6 +106,23 @@ td {
     background-color: rgb(187, 187, 65);
 }
 
+.name, .correct, .wrong, .close {
+    animation: showSquare 0.5s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* Animation for displaying squares */
+@keyframes showSquare {
+    0% {
+        transform: rotate3d(0, 1, 0, 90deg);
+        background-color: rgb(39, 39, 39);
+    }
+
+    0% {
+        transform: rotate3d(0);
+    }
+}
 
 /* Animation for logo when the rapper is guessed */
 @keyframes correctGuess {
@@ -161,4 +176,24 @@ td {
 .animate-wrongGuess {
     animation: wrongGuess 0.5s ease-in-out;
     animation-iteration-count: 1;
+}
+
+/* Hide input */
+@keyframes hideInput {
+    0% {
+        visibility: hidden;
+        user-select: none;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        user-select: none;
+        opacity: 0;
+    }
+}
+
+.animate-hideInput {
+    animation: hideInput 0.5s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }

@@ -40,7 +40,7 @@ const Rappers = [
         monthly: '45M+',
         debut: '1999',
     },
-        {
+    {
         name: 'Lil Baby',
         age: calculateAge(1994, 12, 3),
         genre: 'Trap',

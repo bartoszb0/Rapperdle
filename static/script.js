@@ -8,9 +8,6 @@ console.log(todaysRapper.genre)
 // Remember rappers that were already chosen
 const alreadyChosen = [];
 
-// TODO make it so that every square with infomration is being shown one at a time
-
-
 //Autocomplete names
 const input = document.querySelector('input');
 const suggestionsDiv = document.querySelector('#suggestions');
@@ -83,12 +80,12 @@ input.addEventListener('keyup', chooseFirstRapper);
 // Check if guessed rapper is the todays choice
 const tableBody = document.querySelector('tbody');
 
-function guess(rapper) {
+async function guess(rapper) {
     // Empty the input box and hide suggestions div
     suggestionsDiv.textContent = null;
     input.value = null;
-    // Focus on input again
-    input.focus()
+    // Disable input while the guess is being shown
+    input.disabled = true;
 
     // Create new tr for current guess
     const newGuessRow = document.createElement('tr');
@@ -97,7 +94,7 @@ function guess(rapper) {
     
     const attributes = ['name', 'age', 'genre', 'from', 'debut', 'monthly']
 
-    attributes.forEach(attribute => {
+    for (const attribute of attributes) {
         const tableData = document.createElement('td');
         newGuessRow.appendChild(tableData);
 
@@ -137,19 +134,29 @@ function guess(rapper) {
                 tableData.classList.add('wrong');
             }
         }
-    })
+
+        await waitForAnimationEnd(tableData);
+    }
 
     if (rapper === todaysRapper) {
         triggerAnimation(logo, "correctGuess");
-        input.style.visibility = 'hidden';
+        input.classList.add('animate-hideInput');
     } else {
-        triggerAnimation(logo, "wrongGuess");
+        //triggerAnimation(logo, "wrongGuess");
         alreadyChosen.push(rapper);
+        input.disabled = false;
+        input.focus();
     }
 }
 
+async function waitForAnimationEnd(element) {
+    return new Promise(resolve => {
+        element.addEventListener('animationend', resolve, {once: true});
+    })
+}
 
-// Animate logo on correct and wrong guess
+
+// Animate logo on correct        and wrong guess
 const logo = document.querySelector('#logo')
 
 function triggerAnimation(element, animationName) {
