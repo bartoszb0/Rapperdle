@@ -121,7 +121,22 @@ async function guess(rapper) {
             }
         }
 
-        if (attribute === "age" || attribute === "debut" || attribute === "monthly") {
+        if (attribute === "monthly") {
+            const valueTodayRapper = parseInt(todaysRapper.monthly.slice(0, -2));
+            const valueChosenRapper = parseInt(rapper.monthly.slice(0, -2));
+
+            if (valueTodayRapper < valueChosenRapper) {
+                tableData.textContent += " \u2193";
+                tableData.classList.add('wrong');
+            } else if (valueTodayRapper > valueChosenRapper) {
+                tableData.textContent += " \u2191";
+                tableData.classList.add('wrong');
+            } else {
+                tableData.classList.add('correct');
+            }
+        }
+
+        if (attribute === "age" || attribute === "debut") {
 
             if (todaysRapper[attribute] < rapper[attribute]) {
                 tableData.textContent += " \u2193";
