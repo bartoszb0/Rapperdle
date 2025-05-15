@@ -2,7 +2,6 @@ import Rappers from './rappers.js';
 
 // Pick random rapper
 const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
-console.log(todaysRapper)
 
 // Remember rappers that were already chosen
 const alreadyChosen = [];
