@@ -19,7 +19,7 @@ const Rappers = [
     {
         name: 'Travis Scott',
         age: calculateAge(1991, 4, 30),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Houston, Texas',
         monthly: '60M+',
         debut: '2013',
@@ -27,7 +27,7 @@ const Rappers = [
     {
         name: 'Future',
         age: calculateAge(1983, 11, 20),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '55M+',
         debut: '2012',
@@ -35,7 +35,7 @@ const Rappers = [
     {
         name: 'Lil Wayne',
         age: calculateAge(1982, 9, 27),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'New Orleans, Louisiana',
         monthly: '45M+',
         debut: '1999',
@@ -43,7 +43,7 @@ const Rappers = [
     {
         name: 'Lil Baby',
         age: calculateAge(1994, 12, 3),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '30M+',
         debut: '2017',
@@ -83,7 +83,7 @@ const Rappers = [
     {
         name: 'Ice Spice',
         age: calculateAge(2000, 1, 1),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'New York City, New York',
         monthly: '10M+',
         debut: '2021',
@@ -91,7 +91,7 @@ const Rappers = [
     {
         name: 'Latto',
         age: calculateAge(1998, 12, 22),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '15M+',
         debut: '2016',
@@ -99,7 +99,7 @@ const Rappers = [
     {
         name: 'GloRilla',
         age: calculateAge(1999, 7, 28),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Memphis, Tennessee',
         monthly: '15M+',
         debut: '2019',
@@ -107,7 +107,7 @@ const Rappers = [
     {
         name: 'Doechii',
         age: calculateAge(1998, 3, 29),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Tampa, Florida',
         monthly: '45M+',
         debut: '2020',
@@ -115,7 +115,7 @@ const Rappers = [
     {
         name: 'Kendrick Lamar',
         age: calculateAge(1987, 6, 17),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Compton, California',
         monthly: '85M+',
         debut: '2011',
@@ -131,7 +131,7 @@ const Rappers = [
     {
         name: 'Playboi Carti',
         age: calculateAge(1996, 9, 13),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '50M+',
         debut: '2017',
@@ -139,7 +139,7 @@ const Rappers = [
     {
         name: 'Youngboy NBA',
         age: calculateAge(1999, 10, 20),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Baton Rouge, Louisiana',
         monthly: '15M+',
         debut: '2015',
@@ -147,7 +147,7 @@ const Rappers = [
     {
         name: 'Lil Durk',
         age: calculateAge(1992, 10, 19),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Chicago, Illinois',
         monthly: '15M+',
         debut: '2010',
@@ -155,7 +155,7 @@ const Rappers = [
     {
         name: '21 Savage',
         age: calculateAge(1992, 10, 22),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'London, England',
         monthly: '40M+',
         debut: '2016',
@@ -163,7 +163,7 @@ const Rappers = [
     {
         name: 'J. Cole',
         age: calculateAge(1985, 1, 28),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Fayetteville, North Carolina',
         monthly: '35M+',
         debut: '2007',
@@ -171,7 +171,7 @@ const Rappers = [
     {
         name: 'Tyler, The Creator',
         age: calculateAge(1991, 3, 6),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Los Angeles, California',
         monthly: '40M+',
         debut: '2007',
@@ -179,7 +179,7 @@ const Rappers = [
     {
         name: 'Ken Carson',
         age: calculateAge(2000, 7, 18),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '5M+',
         debut: '2017',
@@ -205,13 +205,13 @@ const Rappers = [
         age: calculateAge(1994, 7, 31),
         genre: ['Trap', 'Emo Rap'],
         from: 'Philadelphia, Pennsylvania',
-        monthly: '60M+',
+        monthly: '25M+',
         debut: '2014',
     },
     {
         name: 'A$AP Rocky',
         age: calculateAge(1988, 10, 3),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Harlem, New York City',
         monthly: '35M+',
         debut: '2011',
@@ -219,7 +219,7 @@ const Rappers = [
     {
         name: 'Gunna',
         age: calculateAge(1993, 6, 14),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'College Park, Georgia',
         monthly: '30M+',
         debut: '2016',
@@ -227,7 +227,7 @@ const Rappers = [
     {
         name: 'NLE Choppa',
         age: calculateAge(2002, 11, 1),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Memphis, Tennessee',
         monthly: '15M+',
         debut: '2018',
@@ -243,7 +243,7 @@ const Rappers = [
     {
         name: 'Lil Tjay',
         age: calculateAge(2001, 4, 30),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'The Bronx, New York',
         monthly: '10M+',
         debut: '2016',
@@ -251,7 +251,7 @@ const Rappers = [
     {
         name: 'Polo G',
         age: calculateAge(1999, 1, 6),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Chicago, Illinois',
         monthly: '15M+',
         debut: '2016',
@@ -259,7 +259,7 @@ const Rappers = [
     {
         name: 'Jack Harlow',
         age: calculateAge(1998, 3, 13),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Louisville, Kentucky',
         monthly: '25M+',
         debut: '2015',
@@ -275,7 +275,7 @@ const Rappers = [
     {
         name: 'Ski Mask the Slump God',
         age: calculateAge(1996, 4, 18),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Fort Lauderdale, Florida',
         monthly: '5M+',
         debut: '2015',
@@ -299,7 +299,7 @@ const Rappers = [
     {
         name: 'Logic',
         age: calculateAge(1990, 1, 22),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Gaithersburg, Maryland',
         monthly: '5M+',
         debut: '2010',
@@ -307,22 +307,22 @@ const Rappers = [
     {
         name: 'Wiz Khalifa',
         age: calculateAge(1987, 9, 8),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Minot, North Dakota',
         monthly: '40M+',
         debut: '2005',
     },
     {
         name: 'Mac Miller',
-        age: calculateAge(1992, 1, 19),
-        genre: 'Rap',
+        age: 26,
+        genre: ['Rap'],
         from: 'Pittsburgh, Pennsylvania',
         monthly: '25M+',
         debut: '2007',
     },
     {
         name: 'Juice WRLD',
-        age: calculateAge(1998, 12, 2),
+        age: 21,
         genre: ['Rap', 'Emo Rap'],
         from: 'Chicago, Illinois',
         monthly: '25M+',
@@ -330,15 +330,15 @@ const Rappers = [
     },
     {
         name: 'Pop Smoke',
-        age: calculateAge(1999, 7, 20),
-        genre: 'Drill',
+        age: 20,
+        genre: ['Drill'],
         from: 'Brooklyn, New York',
         monthly: '15M+',
         debut: '2018',
     },
     {
         name: 'XXXTentacion',
-        age: calculateAge(1998, 1, 23),
+        age: 20,
         genre: ['Trap', 'Emo Rap'],
         from: 'Plantation, Florida',
         monthly: '30M+',
@@ -363,7 +363,7 @@ const Rappers = [
     {
         name: 'JID',
         age: calculateAge(1990, 10, 31),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'East Atlanta, Georgia',
         monthly: '15M+',
         debut: '2010',
@@ -371,7 +371,7 @@ const Rappers = [
     {
         name: 'Lil Tecca',
         age: calculateAge(2002, 8, 26),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Queens, New York',
         monthly: '25M+',
         debut: '2017',
@@ -403,7 +403,7 @@ const Rappers = [
     {
         name: 'Jay-Z',
         age: calculateAge(1969, 12, 4),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Brooklyn, New York',
         monthly: '30M+',
         debut: '1996',
@@ -411,7 +411,7 @@ const Rappers = [
     {
         name: 'Eminem',
         age: calculateAge(1972, 10, 17),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Detroit, Michigan',
         monthly: '65M+',
         debut: '1996',
@@ -459,8 +459,8 @@ const Rappers = [
     {
         name: 'Kanye West',
         age: calculateAge(1977, 6, 8),
-        genre: 'Rap',
-        from: 'Atlanta, Georgia',
+        genre: ['Rap'],
+        from: 'Chicago, Illinois',
         monthly: '60M+',
         debut: '2004',
     },
@@ -475,7 +475,7 @@ const Rappers = [
     {
         name: 'Rick Ross',
         age: calculateAge(1976, 1, 28),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Cartersville, Georgia',
         monthly: '10M+',
         debut: '2006',
@@ -483,7 +483,7 @@ const Rappers = [
     {
         name: 'Gucci Mane',
         age: calculateAge(1980, 2, 12),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Bessemer, Alabama',
         monthly: '10M+',
         debut: '2005',
@@ -491,7 +491,7 @@ const Rappers = [
     {
         name: 'Baby Keem',
         age: calculateAge(2000, 10, 22),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Las Vegas, Nevada',
         monthly: '15M+',
         debut: '2018',
@@ -499,7 +499,7 @@ const Rappers = [
     {
         name: 'Stormzy',
         age: calculateAge(1993, 7, 26),
-        genre: 'Grime',
+        genre: ['Grime'],
         from: 'London, England',
         monthly: '5M+',
         debut: '2014',
@@ -507,7 +507,7 @@ const Rappers = [
     {
         name: 'Skepta',
         age: calculateAge(1982, 9, 19),
-        genre: 'Grime',
+        genre: ['Grime'],
         from: 'Tottenham, London',
         monthly: '5M+',
         debut: '2006',
@@ -522,8 +522,8 @@ const Rappers = [
     },
     {
         name: 'Lil Peep',
-        age: calculateAge(1996, 11, 1),
-        genre: 'Emo Rap',
+        age: 21,
+        genre: ['Emo Rap'],
         from: 'Long Beach, California',
         monthly: '15M+',
         debut: '2015',
@@ -531,7 +531,7 @@ const Rappers = [
     {
         name: 'Frank Ocean',
         age: calculateAge(1987, 10, 28),
-        genre: 'R&B',
+        genre: ['R&B'],
         from: 'Long Beach, California',
         monthly: '35M+',
         debut: '2010',
@@ -539,7 +539,7 @@ const Rappers = [
     {
         name: 'Dave',
         age: calculateAge(1998, 6, 5),
-        genre: 'Rap',
+        genre: ['Rap'],
         from: 'Brixton, London',
         monthly: '15M+',
         debut: '2016',
@@ -547,7 +547,7 @@ const Rappers = [
     {
         name: 'Young Thug',
         age: calculateAge(1991, 8, 16),
-        genre: 'Trap',
+        genre: ['Trap'],
         from: 'Atlanta, Georgia',
         monthly: '25M+',
         debut: '2010',
@@ -555,7 +555,7 @@ const Rappers = [
     {
         name: 'Chief Keef',
         age: calculateAge(1995, 8,15),
-        genre: ['Rap', 'Trap'],
+        genre: ['Trap', 'Drill'],
         from: 'Chicago, Illinois',
         monthly: '10M+',
         debut: '2011',
@@ -563,7 +563,7 @@ const Rappers = [
     {
         name: 'Trippie Redd',
         age: calculateAge(1999, 6, 18),
-        genre: 'Emo Rap',
+        genre: ['Emo Rap'],
         from: 'Columbus, Ohio',
         monthly: '20M+',
         debut: '2014',

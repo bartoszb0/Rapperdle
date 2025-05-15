@@ -1,10 +1,8 @@
 import Rappers from './rappers.js';
 
 // Pick random rapper
-//const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
-const todaysRapper = Rappers[21]
+const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
 console.log(todaysRapper)
-console.log(todaysRapper.genre)
 
 // Remember rappers that were already chosen
 const alreadyChosen = [];
@@ -106,20 +104,19 @@ async function guess(rapper) {
         const tableData = document.createElement('td');
         newGuessRow.appendChild(tableData);
 
-        tableData.textContent = rapper[attribute];
+        if (attribute != "genre") {
+            tableData.textContent = rapper[attribute];
+        }
+
 
         if (attribute === "name") {
             tableData.classList.add('name');
         } 
         
         if (attribute === "genre") {
-            if (todaysRapper.genre === rapper.genre) {
-                tableData.classList.add('correct');
-            } else if (todaysRapper.genre.includes(rapper.genre) || rapper.genre.includes(todaysRapper.genre)) {
-                tableData.classList.add('close');
-            } else {
-                tableData.classList.add('wrong');
-            }
+            tableData.textContent = populateGenres(rapper[attribute]);
+
+            tableData.classList.add(compareGenre(rapper));
         }
 
         if (attribute === "monthly") {
@@ -171,6 +168,33 @@ async function guess(rapper) {
         input.disabled = false;
         input.focus();
     }
+}
+
+function compareGenre(rapper) {
+    const sortedA = todaysRapper.genre.sort();
+    const sortedB = rapper.genre.sort();
+
+    if (sortedA.every((val, index) => val === sortedB[index]) 
+        && sortedA.length === sortedB.length) {
+        return 'correct';
+    } else if (sortedA.some(genre => sortedB.includes(genre))) {
+        return 'close';
+    } else {
+        return 'wrong';
+    }
+}
+
+function populateGenres(array) {
+    let tableContent = '';
+
+    for (let i = 0; i < array.length; i++) {
+        tableContent += `${array[i]}`
+        if (i != array.length - 1) {
+            tableContent += ', '
+        }
+    }
+
+    return tableContent
 }
 
 async function waitForAnimationEnd(element) {
