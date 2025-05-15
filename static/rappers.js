@@ -514,7 +514,7 @@ const Rappers = [
     },
     {
         name: 'Nemzzz',
-        age: calculateAge(1998, 3, 17),
+        age: calculateAge(2004, 3, 28),
         genre: ['Rap', 'Trap'],
         from: 'London, England',
         monthly: '5M+',
