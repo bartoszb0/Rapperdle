@@ -319,4 +319,8 @@ td {
         height: 40px;
         font-size: 16px;
     }
+
+    ::-webkit-scrollbar {
+        width: 100px;
+    }
 }
