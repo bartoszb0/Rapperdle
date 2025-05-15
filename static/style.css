@@ -285,6 +285,7 @@ td {
 
     #tableDiv {
         width: 100%;
+        margin-top: 10px;
         overflow-x: auto;
     }
 
@@ -293,6 +294,10 @@ td {
         width: 100%;
         table-layout: auto;
         border-spacing: 3px;
+    }
+
+    th {
+        font-size: 22px;
     }
 
     td, th {
