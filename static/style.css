@@ -248,12 +248,10 @@ td {
     cursor: pointer;
 }
 
-/* ======= MOBILE RESPONSIVE STYLES ======= */
 @media (max-width: 600px) {
     body {
-        width: 100;
-        font-size: 20px;
-        padding: 20px;
+        font-size: 20px; 
+        padding: 10px;
     }
 
     #logo {
@@ -261,20 +259,11 @@ td {
         margin-top: 10px;
     }
 
-    #inputDiv {
+    #inputDiv input {
         width: 100%;
-    }
-
-    input {
-        width: 100%;
-        transform: scale(1);
+        transform: scale(1); 
         padding: 8px;
         font-size: 18px;
-        box-sizing: border-box;
-    }
-
-    input:focus {
-        background-color: rgb(85, 85, 85);
     }
 
     #suggestions {
@@ -284,39 +273,20 @@ td {
         left: 0;
     }
 
-    #tableDiv {
-        width: 20%;
-        margin-top: 10px;
-        overflow-x: auto;
-        padding-left: 300px; /* so first column isn't cut off */
-    }
-
     table {
         font-size: 18px;
-        width: 100%;
-        table-layout: inherit;
-        border-spacing: 3px;
+        width: 100vw;
+        table-layout: auto;
     }
-    
 
     td, th {
-        min-width: 96px;
-        max-width: 98px;
-        min-height: 80px;
+        height: auto;
         padding: 8px;
-    }
-
-    .correct, .wrong, .close {
-        width: 80px;
-        height: 80px;
-        max-width: 80px;
-        max-height: 80px;
     }
 
     .modal {
         padding: 20px;
         font-size: 18px;
-        max-width: 90vw;
     }
 
     .okButton {
