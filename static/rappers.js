@@ -364,7 +364,7 @@ const Rappers = [
         name: 'JID',
         age: calculateAge(1990, 10, 31),
         genre: ['Rap'],
-        from: 'East Atlanta, Georgia',
+        from: 'Atlanta, Georgia',
         monthly: '15M+',
         debut: '2010',
     },
