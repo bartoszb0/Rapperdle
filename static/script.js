@@ -259,7 +259,7 @@ function handleResizeButton() {
         const resizeButton = document.createElement('button');
         resizeButton.classList.add('resize');
         document.body.appendChild(resizeButton);
-        resizeButton.textContent = 'Show full table'
+        resizeButton.textContent = 'Change table view'
         resizeButton.addEventListener('click', resizeTable);
     } else if (window.innerWidth > 600 && document.querySelector('.resize')) {
         document.querySelector('.resize').remove();
