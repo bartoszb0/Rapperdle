@@ -6,6 +6,9 @@ const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
 // Remember rappers that were already chosen
 const alreadyChosen = [];
 
+// Add resize button
+handleResizeButton();
+
 //Autocomplete names
 const input = document.querySelector('input');
 const suggestionsDiv = document.querySelector('#suggestions');
@@ -248,4 +251,26 @@ function howManyAttempts(count) {
     } else if (count === 1) {
         return 'First try!';
     }
+}
+
+// Add and remove resize button depending on how big is the window
+function handleResizeButton() {
+    if (window.innerWidth <= 600 && !document.querySelector('.resize')) {
+        const resizeButton = document.createElement('button');
+        resizeButton.classList.add('resize');
+        document.body.appendChild(resizeButton);
+        resizeButton.textContent = 'Show full table'
+        resizeButton.addEventListener('click', resizeTable);
+    } else if (window.innerWidth > 600 && document.querySelector('.resize')) {
+        document.querySelector('.resize').remove();
+    }
+}
+
+window.addEventListener('resize', handleResizeButton);
+
+
+// Change the appearance of table
+function resizeTable() {
+    const table = document.querySelector('table');
+    table.classList.toggle('fixedTable');
 }

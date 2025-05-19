@@ -233,17 +233,22 @@ td {
     padding: 40px;
 }
 
-.okButton {
+.resize {
+    margin-top: 20px;
+}
+
+.okButton, .resize {
     width: 100px;
+    text-align: center;
     height: 50px;
     font-family: 'Cal Sans', sans-serif;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     background-color: rgb(119, 119, 119);
     color: white;
 }
 
-.okButton:hover {
+.okButton:hover, .resize:hover {
     background-color: rgb(139, 139, 139);
     cursor: pointer;
 }
@@ -296,8 +301,13 @@ td {
         border-spacing: 3px;
     }
 
+    .fixedTable {
+        table-layout: fixed;
+        font-size: 15px;
+    }
+
     th {
-        font-size: 22px;
+        font-size: 15px;
     }
 
     td, th {
