@@ -1,7 +1,8 @@
 import Rappers from './rappers.js';
 
 // Pick random rapper
-const todaysRapper = Rappers[Math.floor(Math.random() * Rappers.length)]
+const todaysRapper = getRapperOfTheDay();
+console.log(todaysRapper)
 
 // Remember rappers that were already chosen
 const alreadyChosen = [];
@@ -110,7 +111,6 @@ async function guess(rapper) {
             tableData.textContent = rapper[attribute];
         }
 
-
         if (attribute === "name") {
             tableData.classList.add('name');
         } 
@@ -165,7 +165,6 @@ async function guess(rapper) {
         input.classList.add('animate-hideInput');
         winnerModal();
     } else {
-        //triggerAnimation(logo, "wrongGuess");
         alreadyChosen.push(rapper);
         input.disabled = false;
         input.focus();
@@ -273,4 +272,13 @@ window.addEventListener('resize', handleResizeButton);
 function resizeTable() {
     const table = document.querySelector('table');
     table.classList.toggle('fixedTable');
+}
+
+
+// Choose todays rapper
+function getRapperOfTheDay() {
+  const today = new Date();
+  const startDate = new Date("2024-01-01");
+  const dayIndex = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  return Rappers[dayIndex % Rappers.length];
 }
