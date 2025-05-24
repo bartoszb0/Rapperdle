@@ -3,8 +3,19 @@ import Rappers from './rappers.js';
 // Pick random rapper
 const todaysRapper = getRapperOfTheDay();
 
+//Reset local storage if its different day
+resetLocal();
+
 // Remember rappers that were already chosen
-const alreadyChosen = [];
+const alreadyChosen = JSON.parse(localStorage.getItem('chosen')) || [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (alreadyChosen.length > 0) {
+        alreadyChosen.forEach(rapper => {
+            guess(rapper, true)
+        })
+    }
+})
 
 // Add resize button
 handleResizeButton();
@@ -34,8 +45,10 @@ function autocomplete(e) {
     if (name.length > 0) {
         Rappers.forEach(rapper => {
             if (rapper.name.toUpperCase().startsWith(name.toUpperCase())) {
-                if (!alreadyChosen.includes(rapper))
-                suggestions.push(rapper);
+                const isChosen = alreadyChosen.some(chosen => chosen.name === rapper.name);
+                if (!isChosen) {
+                    suggestions.push(rapper);
+                }
             }
         })
         populateDiv(suggestions)
@@ -88,7 +101,7 @@ input.addEventListener('keydown', (e) => {
 // Check if guessed rapper is the todays choice
 const tableBody = document.querySelector('tbody');
 
-async function guess(rapper) {
+async function guess(rapper, calledByLocal=false) {
     // Empty the input box and hide suggestions div
     suggestionsDiv.textContent = null;
     input.value = null;
@@ -163,10 +176,21 @@ async function guess(rapper) {
         triggerAnimation(logo, "correctGuess");
         input.classList.add('animate-hideInput');
         winnerModal();
+        localStorage.setItem('wonToday', true)
     } else {
-        alreadyChosen.push(rapper);
         input.disabled = false;
         input.focus();
+    }
+    
+    if (localStorage.getItem('wonToday') === 'true') {
+        triggerAnimation(logo, "correctGuess");
+        input.classList.add('animate-hideInput');
+        input.disabled = true;
+    }
+
+    if (!calledByLocal) {
+        alreadyChosen.push(rapper);
+        localStorage.setItem('chosen', JSON.stringify(alreadyChosen));
     }
 }
 
@@ -280,4 +304,15 @@ function getRapperOfTheDay() {
   const startDate = new Date("2024-01-01");
   const dayIndex = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
   return Rappers[dayIndex % Rappers.length];
+}
+
+function resetLocal() {
+    const lastNotedDay = localStorage.getItem('date')
+    const nowNotedDay = new Date()
+    const comparisonDate = nowNotedDay.getFullYear() + '-' + nowNotedDay.getMonth() + '-' + nowNotedDay.getDate()
+
+    if (lastNotedDay != comparisonDate) {
+        localStorage.clear()
+        localStorage.setItem('date', comparisonDate)
+    }
 }
